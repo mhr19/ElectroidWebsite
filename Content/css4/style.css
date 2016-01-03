@@ -170,7 +170,7 @@ img {
   padding-top: 67px;
 }
 #intro .overlay {
-  background: url("../../img/background/bg-overlay.png") rgba(0, 0, 0, 0.6) repeat;
+  background: url("../img/background/bg-overlay.png") rgba(0, 0, 0, 0.6) repeat;
 }
 #intro .main-text {
   margin: 202px 0px;
@@ -430,7 +430,7 @@ img {
   color: #008A7D;
 }
 #why-chose {
-  background: url('../img/background/bg-2.jpg') center center no-repeat;
+  background: url('../../img/background/bg-2.jpg') center center no-repeat;
   color: #fff;
   background-size: cover;
   overflow: hidden;
