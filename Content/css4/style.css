@@ -170,7 +170,7 @@ img {
   padding-top: 67px;
 }
 #intro .overlay {
-  background: url("../img/background/bg-overlay.png") rgba(0, 0, 0, 0.6) repeat;
+  background: url("../../img/background/bg-overlay.png") rgba(0, 0, 0, 0.6) repeat;
 }
 #intro .main-text {
   margin: 202px 0px;

@@ -81,14 +81,14 @@
                            
 
                      
-
-                                            @foreach (var i in list)
+                            @if(list!=null)
+                            { 
+                                            foreach (var i in list)
                                             {
                                                 <option value="@i.Id">@i.Id</option>
                                             }
                                             
-
-                                       
+                            }      
 
                                     </select>
 
