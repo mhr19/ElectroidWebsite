@@ -1,0 +1,209 @@
+﻿@using Electroid.Models
+
+@{
+    List<House> list = new List<House>();
+    try
+    {
+        Database1Entities1 de = new Database1Entities1();
+        list = de.Houses.ToList();
+    }
+    catch (Exception a)
+    {
+        list = null;
+    }
+
+    int houseId=ViewBag.Id;
+
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-Up/Login Form</title>
+    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="~/Content/css3/normalize.css">
+
+    <link rel="stylesheet" href="~/Content/css3/style.css">
+
+
+
+</head>
+<body>
+    <div class="form">
+
+        <ul class="tab-group">
+            <li class="tab"><a href="#login">House</a></li>
+            @*<li class="tab"><a href="#signup">User</a></li>*@
+            <li class="tab active"><a href="#statistics">Statistics</a></li>
+
+        </ul>
+
+        <div class="tab-content">
+            @*<div id="signup">
+                                <h1>Add new User</h1>
+
+                                <form role="form" action="~/Admin/addUser" >
+
+                                    <div class="top-row">
+                                        <div class="field-wrap">
+                                            <label>
+                                                 User Id<span class="req">*</span>
+                                            </label>
+                                            <input type="number" name="Id" required autocomplete="off" />
+                                        </div>
+
+                                        <div class="field-wrap">
+                                            <label>
+                                                Name<span class="req">*</span>
+                                            </label>
+                                            <input type="text" name="Name" required autocomplete="off" />
+                                        </div>
+                                    </div>
+                                    <div class="top-row">
+
+                                            <div class="field-wrap">
+                                                <label>
+                                                    Set a Password<span class="req">*</span>
+                                                </label>
+                                                <input type="password" name="Password" required autocomplete="off" />
+                                            </div>
+
+                                        <div class="field-wrap">
+                                            <select class="form-control" name="Type" id="selectError" data-rel="chosen" style="width:250px; height:48px">
+                                                <option value="Master Admin">Master Admin</option>
+                                                <option value="Admin">Admin</option>
+                                                <option value="User">User</option>
+                                            </select>
+
+                                        </div>
+
+
+                                      </div>
+
+                                    <div class="top-row">
+                                        <div class="field-wrap">
+                                            <select class="form-control" name="Status" id="selectError" data-rel="chosen" style="width:250px; height:48px">
+                                                <option value="Active">Active</option>
+                                                <option value="Block">Block</option>
+
+                                            </select>
+                                        </div>
+
+                                        <div class="field-wrap">
+
+                                            <select class="form-control" name="HouseId" id="selectError" data-rel="chosen" style="width:250px; height:48px">
+
+
+
+                                                @if (list != null)
+                                                {
+                                                    foreach (var i in list)
+                                                    {
+                                                        <option value="@i.Id">@i.Id</option>
+                                                    }
+
+                                                }
+
+                                            </select>
+
+                                        </div>
+                                        </div>
+
+                                        <button type="submit" class="button button-block">Add User</button>
+
+                </form>
+                                        </div>*@
+
+
+            <div id="login">
+                <h1>Add New House</h1>
+
+                <form role="form" action="~/Admin/addHouse">
+                    <div class="form-group ">
+                        <div class="field-wrap">
+                            <label>
+                                House Id<span class="req">*</span>
+                            </label>
+                            <input type="number" name="Id" required autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <div class="field-wrap">
+                            <label>
+                                Address<span class="req">*</span>
+                            </label>
+                            <input type="text" name="Address" required autocomplete="off" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <div class="field-wrap">
+                            <label>
+                                Contact Number<span class="req">*</span>
+                            </label>
+                            <input type="number" name="PhoneNumber" required autocomplete="off" />
+                        </div>
+                    </div>
+
+
+
+                    <button type="submit" class="button button-block">Add House</button>
+
+                </form>
+            </div>
+
+            <div id="statistics">
+                <h1>Electricity Consumption Statistics</h1>
+
+                <form role="form" action="~/Admin/showChart">
+
+                    <div class="top-row ">
+
+                        <div class="field-wrap">
+
+                            <select class="form-control" name="HouseId" id="selectError" data-rel="chosen" style="width:275px; height:48px; margin-left:30px">
+
+
+
+                                @if (list != null)
+                                {
+                                    foreach (var i in list)
+                                    {
+                                        <option value="@i.Id">@i.Id</option>
+                                    }
+                                  
+                                }
+
+                            </select>
+
+                        </div>
+                        <div class="field-wrap">
+                            <button type="submit" class="button button-block" style=" width:150px; height:48px; margin-left:40px; padding:0px; letter-spacing:.001em; text-transform:none">Show</button>
+                        </div>
+
+
+                    </div>
+
+
+                    <div style="text-align: center">
+                        <img src="/Admin/DrawChart?Id=@houseId" />
+                    </div>
+
+            </div><!-- tab-content -->
+
+        </div> <!-- /form -->
+        
+        
+        </div>
+            <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+            <script src="~/Scripts/js2/index.js"></script>
+
+
+
+</body>
+</html>
+
