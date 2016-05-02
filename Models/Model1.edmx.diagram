@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="Database1Model.Device" Width="1.5" PointX="5.375" PointY="6.75" />
         <EntityTypeShape EntityType="Database1Model.DeviceBill" Width="1.5" PointX="7.5" PointY="5.875" />
         <EntityTypeShape EntityType="Database1Model.DeviceStatu" Width="1.5" PointX="7.5" PointY="9" />
-        <EntityTypeShape EntityType="Database1Model.House" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="Database1Model.House" Width="1.5" PointX="0.5" PointY="2.75" />
         <EntityTypeShape EntityType="Database1Model.Room" Width="1.5" PointX="3" PointY="6" />
         <EntityTypeShape EntityType="Database1Model.TaxationDetail" Width="1.5" PointX="5.25" PointY="2.125" />
         <EntityTypeShape EntityType="Database1Model.User" Width="1.5" PointX="3" PointY="2.125" />
