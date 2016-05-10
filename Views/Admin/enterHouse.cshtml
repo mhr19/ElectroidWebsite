@@ -151,13 +151,19 @@
                                 <div class="control-group">
                                     <label class="control-label" for="typeahead">Address: </label>
                                     <div class="controls">
-                                        <textarea name="Address" style="height:100px; width:280px" required></textarea>
+                                        <textarea name="Address" maxlength="15
+                                                  0" style="height:100px; width:280px" required></textarea>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="date01">Number:</label>
                                     <div class="controls">
-                                        <input type="text" style=" width:280px" name="PhoneNumber" required>
+                                        @*<input type="number" min="0" max="100000000000" style=" width:280px" name="PhoneNumber" required>*@
+                                        <input name="PhoneNumber" min="0"
+                                               oninput="javascript: if (this.value.length > 11) this.value = this.value.slice(0, this.maxLength); if (this.value < 0) return false;"
+                                               type="number"
+                                               maxlength="11" required />
+
                                     </div>
                                 </div>
                                 <div class="form-actions">
