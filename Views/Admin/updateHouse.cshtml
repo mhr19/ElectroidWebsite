@@ -61,11 +61,7 @@
             <div class="box span12">
                 <div class="box-header" data-original-title>
                     <h2><i class="halflings-icon edit"></i><span class="break"></span>Update House Details</h2>
-                    @*<div class="box-icon">
-                        <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                        <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                    </div>*@
+                   
                 </div>
                 <div class="box-content">
                     <form class="form-horizontal" action="~/Admin/saveUpdatedHouse" method="post">
@@ -77,15 +73,20 @@
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" for="typeahead">Address: </label>
+                                <label class="control-label" for="typeahead">Address: <span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <textarea name="Address" style="height:100px; width:280px" required>@Model.Address</textarea>
+                                    <textarea name="Address" style="height:100px; width:280px" maxlength="150" required>@Model.Address</textarea>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" for="date01">Number:</label>
+                                <label class="control-label" for="date01">Number:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="PhoneNumber" value="@Model.PhoneNumber" required>
+                                    @*<input type="text" style=" width:280px" name="PhoneNumber" value="@Model.PhoneNumber" required>*@
+                                    <input name="PhoneNumber" min="0"
+                                           oninput="javascript: if (this.value.length > 11) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           style=" width:280px"
+                                           maxlength="11" required />
                                 </div>
                             </div>
                             <div class="form-actions">

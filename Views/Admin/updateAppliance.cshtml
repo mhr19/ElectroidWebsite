@@ -139,11 +139,7 @@
             <div class="box span12">
                 <div class="box-header" data-original-title>
                     <h2><i class="halflings-icon edit"></i><span class="break"></span>Edit Appliance Details</h2>
-                    @*<div class="box-icon">
-                        <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                        <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                    </div>*@
+                 
                 </div>
                 <div class="box-content">
                     <form class="form-horizontal" action="~/Admin/saveUpdatedAppliance" method="post">
@@ -152,27 +148,39 @@
                             <div class="control-group">
                                 <label class="control-label" for="date01">Id:</label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Id" value="@Model.Id" readonly>
+                                    <input type="text" style=" width:280px" name="Id"  value="@Model.Id" readonly>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" for="date01">Name:</label>
+                                <label class="control-label" for="date01">Name:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Name" value="@Model.Name" required>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="date01">Standup Voltage:</label>
-                                <div class="controls">
-                                    <input type="number" style=" width:280px" name="StandupVoltage" value="@Model.StandupVoltage" required>
+                                    <input type="text" style=" width:280px" name="Name" maxlength="50" value="@Model.Name" required>
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="date01">Running Voltage:</label>
+                                <label class="control-label" for="date01">Standup Voltage:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="RunningVoltage" value="@Model.RunningVoltage" required>
+                                    @*<input type="number" style=" width:280px" name="StandupVoltage" value="@Model.StandupVoltage" required>*@
+                                    <input name="StandupVoltage" min="0"
+                                           value="@Model.StandupVoltage"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="date01">Running Voltage:<span style="color:red;">*</span></label>
+                                <div class="controls">
+                                    @*<input type="text" style=" width:280px" name="RunningVoltage" value="@Model.RunningVoltage" required>*@
+                                    <input name="RunningVoltage" min="0"
+                                           value="@Model.RunningVoltage"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
                                 </div>
                             </div>
 

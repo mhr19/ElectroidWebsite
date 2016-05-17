@@ -138,11 +138,7 @@
             <div class="box span12">
                 <div class="box-header" data-original-title>
                     <h2><i class="halflings-icon edit"></i><span class="break"></span>Add Taxation Detail</h2>
-                    @*<div class="box-icon">
-                        <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                        <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                    </div>*@
+                
                 </div>
                 <div class="box-content">
                     <form class="form-horizontal" action="~/Admin/saveTaxationDetail" method="post">
@@ -173,76 +169,106 @@
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Taxation:</label>
+                                <label class="control-label">Taxation:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Taxation" required>
+                                    <input type="text" style=" width:280px" name="Taxation" maxlength="50" required >
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab1:</label>
+                                <label class="control-label">Slab1:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Slab1" required>
+                                    <input type="text" style=" width:280px" maxlength="50" name="Slab1" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab1 Rate:</label>
+                                <label class="control-label">Slab1 Rate:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="Slab1Rate" required>
+                                    @*<input type="number" style=" width:280px" name="Slab1Rate" required>*@
+                                    <input name="Slab1Rate" min="0"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab2:</label>
+                                <label class="control-label">Slab2:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Slab2" required>
+                                    <input type="text" style=" width:280px" maxlength="50" name="Slab2" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab2 Rate:</label>
+                                <label class="control-label">Slab2 Rate:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="Slab2Rate" required>
+                                 
+                                    <input name="Slab2Rate" min="0"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab3:</label>
+                                <label class="control-label">Slab3:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Slab3" required>
+                                    <input type="text" style=" width:280px" maxlength="50" name="Slab3" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab3 Rate:</label>
+                                <label class="control-label">Slab3 Rate:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="Slab3Rate" required>
+                                   
+                                    <input name="Slab3Rate" min="0"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Slab4:</label>
+                                <label class="control-label">Slab4:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Slab4" required>
+                                    <input type="text" style=" width:280px" maxlength="50" name="Slab4" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab4 Rate:</label>
+                                <label class="control-label">Slab4 Rate:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="Slab4Rate" required>
+                                    
+                                    <input name="Slab4Rate" min="0"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab5:</label>
+                                <label class="control-label">Slab5:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Slab5" required>
+                                    <input type="text" maxlength="50" style=" width:280px" name="Slab5" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Slab5 Rate:</label>
+                                <label class="control-label">Slab5 Rate:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="Slab5Rate" required>
+                                 
+                                    <input name="Slab5Rate" min="0"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Other Amount:</label>
+                                <label class="control-label">Other Amount:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="OtherAmount" required>
+                                   
+                                    <input name="OtherAmount" min="0"
+                                           style=" width:280px"
+                                           oninput="javascript: if (this.value.length > 6) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="6" required />
                                 </div>
                             </div>
                             <div class="form-actions">

@@ -60,11 +60,7 @@
             <div class="box span12">
                 <div class="box-header" data-original-title>
                     <h2><i class="halflings-icon edit"></i><span class="break"></span>Update Device Details</h2>
-                    @*<div class="box-icon">
-                        <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                        <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                    </div>*@
+                 
                 </div>
                 <div class="box-content">
                     <form class="form-horizontal" action="~/Admin/saveUpdatedDevice" method="post">
@@ -129,28 +125,40 @@
                             </div>*@
 
                             <div class="control-group">
-                                <label class="control-label">Name:</label>
+                                <label class="control-label">Name:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Name" value="@Model.Name" required>
+                                    <input type="text" style=" width:280px" name="Name" maxlength="50" value="@Model.Name" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Device Arduino Id:</label>
+                                <label class="control-label">Device Arduino Id:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="DeviceArduinoId" value="@Model.DeviceArduinoId" required>
+                                    @*<input type="number" style=" width:280px" name="DeviceArduinoId" value="@Model.DeviceArduinoId" required>*@
+                                    <input name="DeviceArduinoId" min="0"
+                                           style=" width:280px"
+                                           value="@Model.DeviceArduinoId"
+                                           oninput="javascript: if (this.value.length > 3) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="3" required />
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Status:</label>
+                                <label class="control-label">Status:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Status" value="@Model.Status" required>
+                                    <input type="text" style=" width:280px" name="Status" maxlength="10" value="@Model.Status" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Voltage</label>
+                                <label class="control-label">Voltage:<span style="color:red;">*</span></label>
                                 <div class="controls">
                                     <input type="number" style=" width:280px" name="Voltage" value="@Model.Voltage" required>
+                                    <input name="Voltage" min="0"
+                                           style=" width:280px"
+                                           value="@Model.Voltage"
+                                           oninput="javascript: if (this.value.length > 4) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           maxlength="4" required />
                                 </div>
                             </div>
 

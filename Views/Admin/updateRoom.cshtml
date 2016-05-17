@@ -61,11 +61,7 @@
             <div class="box span12">
                 <div class="box-header" data-original-title>
                     <h2><i class="halflings-icon edit"></i><span class="break"></span>Update Room Details</h2>
-                    @*<div class="box-icon">
-                        <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                        <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                    </div>*@
+           
                 </div>
                 <div class="box-content">
                     <form class="form-horizontal" action="~/Admin/saveUpdatedRoom" method="post">
@@ -98,16 +94,22 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Name:</label>
+                                <label class="control-label">Name:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="RoomName" value="@Model.RoomName" required>
+                                    <input type="text" style=" width:280px" name="RoomName" maxlength="50" value="@Model.RoomName" required>
                                 </div>
                             </div>
                             
                             <div class="control-group">
-                                <label class="control-label">Master Arduino Id:</label>
+                                <label class="control-label">Master Arduino Id:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="number" style=" width:280px" name="ArduinoUnoId" value="@Model.ArduinoUnoId" required>
+                                    @*<input type="number" style=" width:280px" name="ArduinoUnoId" value="@Model.ArduinoUnoId" required>*@
+                                    <input name="ArduinoUnoId" min="0"
+                                           value="@Model.ArduinoUnoId"
+                                           oninput="javascript: if (this.value.length > 3) this.value = this.value.slice(0, this.maxLength); "
+                                           type="number"
+                                           style=" width:280px"
+                                           maxlength="3" required />
                                 </div>
                             </div>
 

@@ -2032,7 +2032,7 @@ fieldset[disabled] .btn-link:focus {
 
 .login-box .icons i {
 	text-align: right;
-	opacity: .2;
+	/*opacity: .2;*/
 	filter: alpha(opacity=20);
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
 	margin: 0px 5px;
@@ -2086,7 +2086,7 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .login-box .add-on i{
-	opacity: .1;
+	/*opacity: .1;*/
 	filter: alpha(opacity=10);
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
 }

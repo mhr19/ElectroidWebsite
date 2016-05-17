@@ -109,17 +109,13 @@
             <div class="box span12">
                 <div class="box-header" data-original-title>
                     <h2><i class="halflings-icon user"></i><span class="break"></span>Rooms</h2>
-                    <div class="box-icon">
-                        <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                        <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                        <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                    </div>
+                  
                 </div>
                 <div class="box-content">
                     <table class="table table-striped table-bordered bootstrap-datatable datatable">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th hidden>Id</th>
                                 <th>Room Name</th>
                                 <th>Arduino UNO Id</th>
                                 <th>Actions</th>
@@ -133,7 +129,7 @@
                                 {
                             <tr>
                                  
-                                <td>@a.Id</td>
+                                <td hidden>@a.Id</td>
                                 <td class="center">@a.RoomName</td>
                                 <td class="center">@a.ArduinoUnoId</td>
                                
@@ -144,9 +140,10 @@
                                     <a class="btn btn-info" href="@Url.Action("updateRoom", "Admin", new {Id=@a.Id })">
                                         <i class="halflings-icon white edit"></i>
                                     </a>
-                                    <a class="btn btn-danger" href="@Url.Action("deleteRoom", "Admin", new {Id=@a.Id })">
+                                    <a class="btn btn-danger" onClick="return confirm('Do you really want to delete it?')" href="@Url.Action("deleteRoom", "Admin", new { Id = @a.Id })">
                                         <i class="halflings-icon white trash"></i>
                                     </a>
+
                                 </td>
                             </tr>
                             }
@@ -163,6 +160,40 @@
 
         </div><!--/row-->
 
+        <div id="delete-dialog" title="Confirmation">
+            <p>Are you sure you want to delete this Brand?</p>
+        </div>
+        <script type="text/javascript">
+        var deleteLinkObj;
+        // delete Link
+        $('.delete-link').click(function () {
+        deleteLinkObj = $(this);  //for future use
+        $('#delete-dialog').dialog('open');
+        return false; // prevents the default behaviour
+        });
+
+        $('#delete-dialog').dialog({
+            autoOpen: false, width: 400, resizable: false, modal: true, //Dialog options
+            buttons: {
+                "Continue": function () {
+                    $.post(deleteLinkObj[0].href, function (data) {  //Post to action
+                        if (data == '<%= Boolean.TrueString %>') {
+                            deleteLinkObj.closest("tr").hide('fast'); //Hide Row
+                            //(optional) Display Confirmation
+                        }
+                        else {
+                            //(optional) Display Error
+                        }
+                    });
+                    $(this).dialog("close");
+                },
+                "Cancel": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+        </script>
+            
         <div class="control-group">
             <a class=" btn btn-primary" href="@Url.Action("addRoom", "Admin", new { Id = @ViewBag.searchedHouse.Id })">+ Add Room</a>
             <a class=" btn btn-primary" href="~/Admin/addUser">+ Add User</a>

@@ -134,22 +134,18 @@
                     <li><a href="#">Dashboard</a></li>
                 </ul>
 
-                <div class="row-fluid sortable">
+                <div class="row-fluid ">
                     <div class="box span12">
                         <div class="box-header" data-original-title>
                             <h2><i class="halflings-icon user"></i><span class="break"></span>Houses</h2>
-                            @*<div class="box-icon">
-                                <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                                <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                            </div>*@
+                 
                         </div>
                         <div class="box-content">
                             <table class="table table-striped table-bordered bootstrap-datatable datatable">
                                 <thead>
                                     <tr>
-                                        <th>Id</th>
-                                        <th style="width:400px;">Address</th>
+                                        <th hidden>Id</th>
+                                        <th style="width:450px;">Address</th>
                                         <th>Phone Number</th>
                                         <th>Actions</th>
                                         
@@ -161,7 +157,7 @@
                                     foreach(var a in Model)
                                     { 
                                     <tr>
-                                        <td>@a.Id</td>
+                                        <td hidden>@a.Id</td>
                                         <td class="center">@a.Address</td>
                                         <td class="center">@a.PhoneNumber</td>
                                        
@@ -172,7 +168,7 @@
                                             <a class="btn btn-info" href="@Url.Action("updateHouse", "Admin", new {Id=@a.Id })">
                                                 <i class="halflings-icon white edit"></i>
                                             </a>
-                                            <a class="btn btn-danger" href="@Url.Action("deleteHouse", "Admin" , new {id=@a.Id })">
+                                            <a class="btn btn-danger" onclick="return confirm('Do you really want to delete it?')" href="@Url.Action("deleteHouse", "Admin" , new {id=@a.Id })">
                                                 <i class="halflings-icon white trash"></i>
                                             </a>
                                         </td>

@@ -1,0 +1,452 @@
+﻿@{
+    Layout = null;
+
+    if (ViewBag.message != null)
+    {
+        <script type="text/javascript">
+            alert("Wrong password");</script>
+    }
+}<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electroid</title>
+
+    <meta name="description" content="Design - is a Premium HTML5 Responsive Templeate by Graygrids Team.">
+
+    <meta name="keywords" content="Startup HTML template, Bootstrap Agency theme, html template, charity template, premium html template, one page template">
+
+    <meta name="author" content="GrayGrids">
+
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    @*<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/assets/font-awesome/css/font-awesome.min.css">*@
+    <link rel="stylesheet" href="~/assets/css/form-elements.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <!-- Bootstrap  -->
+    <link href="~/Content/css4/bootstrap.min.css" rel="stylesheet">
+
+    <!-- icon fonts font Awesome -->
+    <link rel="stylesheet" media="screen" href="~/Content/fonts/font-awesome.min.css">
+
+    <!-- Custom Styles -->
+    <link href="~/Content/css4/style.css" rel="stylesheet">
+
+    <!-- Responsive Styles -->
+    <link href="~/Content/css4/responsive.css" rel="stylesheet">
+    <link href="~/Content/css/style2.css" rel="stylesheet" />
+    <!-- Normalize Styles -->
+    <link href="~/Content/css4/normalize.css" rel="stylesheet">
+
+    <!-- Extras -->
+    <link rel="stylesheet" type="text/css" href="~/Content/extras2/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/extras2/lightbox.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/extras2/owl/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/extras2/owl/owl.theme.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/extras2/owl/owl.transitions.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+     
+   
+            
+        
+
+
+</head>
+<body>
+    <!-- Start Header Section -->
+    <header id="header">
+        <nav class="main-navigation navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="200">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </button>
+                    <!-- logo here -->
+                    <a href="#header" class="navbar-brand" style="padding-top:0px"><img src="~/img/Electroid.png" alt="" style="width:190px; height:60px"></a>
+                </div>
+
+                <!-- Start Navigation Menu -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right" id="main_navigation_menu">
+                        <li class="active"><a href="#header">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#why-chose">Why Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        @*<li><a href="~/Admin/Login">Login2</a></li>*@
+                        @*<li><a href="#" id="loginform">Login</a></li>*@
+                        <li><div class="top-big-link"><a class="btn btn-link-1 launch-modal" href="#" data-modal-id="modal-login" style="padding-top:5px;padding-bottom:5px;margin:0px;border:0px;width:50px;height:30px;background-color:white">Login</a></div></li>
+
+                    </ul>
+                </div>
+                <!-- End Navigation Menu -->
+            </div>
+        </nav>
+    </header>
+    <!-- End Header Section -->
+    <!-- Start Intro Section -->
+    <section id="intro" class="section-intro">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="main-text">
+                        <h1 class="wow fadeInUp"><span>Electroid</span> - Make your Homes Smarter</h1>
+                        <h2 class="wow fadeInUp" data-wow-delay=".7s">Best solution for controlling electical appliances remotely.</h2>
+                        @*<div class="wow fadeInUp" data-wow-delay="1.5s"><a onclick="smoothScr.anim('services')" class="btn btn-border btn-lg"><i class="fa fa-spinner fa-spin"></i> Explore</a></div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                    </button>
+                    <h3 class="modal-title" id="modal-login-label">Login to see your Info.</h3>
+                    <p>Enter your username and password to log in:</p>
+                </div>
+
+                <div class="modal-body">
+
+                    <form role="form" action="~/Admin/LoginCheck" method="post" class="login-form">
+                        <div class="form-group">
+                            <label class="sr-only" for="form-username">Username</label>
+                            <input type="text" name="Name" placeholder="Username..." class="form-username form-control" id="form-username">
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="form-password">Password</label>
+                            <input type="password" name="Password" placeholder="Password..." class="form-password form-control" id="form-password">
+                        </div>
+                        <button type="submit" class="btn">Sign in!</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    @*<div class="login">
+            <div class="formholder">
+                <div class="randompad">
+                    <fieldset>
+                        <label>Email</label>
+                        <input type="email" value="example@example.com" />
+                        <label>Password</label>
+                        <input type="password" />
+                        <input type="submit" value="Login" />
+
+                    </fieldset>
+                </div>
+            </div>
+        </div>*@
+
+
+    <!-- End Intro Section -->
+    <!-- Start Services Section -->
+    <section id="services">
+        <div class="container">
+            <h1 class="section-title wow fadeIn" data-wow-delay=".2s"><span>Our</span> Services</h1>
+            <div class="row">
+                <div class="col-sm-6 col-md-3 wow fadeInUp">
+                    <div class="service-box">
+                        <div class="content">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-leaf"></i>
+                            </div>
+                            <h2>Controlling of Appliances </h2>
+                            <p>ELECTROID is meant to control and get the status of all the electrical appliances of our home remotely from anywhere around the world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".2s" data-wow-offset="10">
+                    <div class="service-box">
+                        <div class="content">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-heart"></i>
+                            </div>
+                            <h2>Bill Estimation & Optimization</h2>
+                            <p>Electroid smart phone application can predict the bill estimation based on the usage of appliances and we can then control the electricity consumption. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".4s" data-wow-offset="10">
+                    <div class="service-box">
+                        <div class="content">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-child"></i>
+                            </div>
+                            <h2>GSM & WiFi Based Automation</h2>
+                            <p>ELECTROID is the first home automation system that is giving the facility of both GSM and wifi based appliances controlling system synchronously.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay=".6s" data-wow-offset="10">
+                    <div class="service-box">
+                        <div class="content">
+                            <div class="icon-wrapper">
+                                <i class="fa fa-mobile-phone"></i>
+                            </div>
+                            <h2>Bill Scheduling</h2>
+                            <p>ELECTROID system is smart enough to fulfill your needs. Just enter the amount of electricity bill you can afford and it will genertae a schedule for the usage of appliances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Section-->
+    <!-- Start About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h1 class="section-title wow fadeIn" data-wow-delay=".8s"><span>About</span> ELECTROID</h1>
+            <div class="row">
+                <div id="slide" class="owl-carousel">
+                    <div class="item">
+                        <div class="col-sm-6 col-md-6 wow fadeInLeft" data-wow-offset="10">
+                            <div class="side-left">
+                                <img src="~/img/bg-intro2.jpg" alt="">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-6 wow fadeInRight" data-wow-offset="10">
+                            <div class="side-right">
+                                <p>
+                                    Electroid is aimed on solving this problem with the use of ICT and mobile technology by providing a remote GSM and Wifi based command and control system for electricity consumption in a house hold unit. The device includes an AI based planning and scheduling mechanism as well enabling the consumer to know monthly consumption of household in advance and plan accordingly. The cost of the device is minimal and designed with a view of urban population in mind.
+
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- End About Us Section -->
+    <!-- Start Why chose us Section -->
+    <section id="why-chose">
+        <div class="container">
+            <h1 class="section-title wow fadeIn" data-wow-delay=".2s"><span>Why</span> ELECTROID</h1>
+            <div class="row">
+                <div class="col-md-4 wow fadeInLeft" data-wow-offset="10" data-wow-delay="0.5s">
+                    <div class="content-left">
+                        <div class="box-left">
+                            <span class="icon">
+                                <i class="fa fa-laptop"></i>
+                            </span>
+                            <div class="content">
+                                <h4>Easy to Use</h4>
+                                <p>Electroid smart phone application is user friendly and anyone can easily use it to control electrical appliances.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="box-left">
+                            <span class="icon">
+                                <i class="fa fa-cog"></i>
+                            </span>
+                            <div class="content">
+                                <h4>Security</h4>
+                                <p>Electroid app has the login feature which adds up the security to the system and restricts the unauthenticated user.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="box-left">
+                            <span class="icon">
+                                <i class="fa fa-random"></i>
+                            </span>
+                            <div class="content">
+                                <h4>Compatibility</h4>
+                                <p>This automation system is compatible with new as well as old houses and can be used in all of them without much changing in the wiring.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInUp" data-wow-offset="10" data-wow-delay="0.3s">
+                    <div class="showcase-box">
+                        <img src="~/img/why.png" />
+                        @*<img src="~/img/why.png" alt="">*@
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInRight" data-wow-offset="10" data-wow-delay="0.5s">
+                    <div class="content-right">
+                        <div class="box-right">
+                            <span class="icon">
+                                <i class="fa fa-umbrella"></i>
+                            </span>
+                            <div class="content">
+                                <h4>Premium Features</h4>
+                                <p>Electroid gives its users all the unique features that has never been implemented before and which adds much value to home automation. </p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="box-right">
+                            <span class="icon">
+                                <i class="fa fa-heart"></i>
+                            </span>
+                            <div class="content">
+                                <h4>Economical</h4>
+                                <p>Electroid is the most economical home automation system with respect to its unique features.</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="box-right">
+                            <span class="icon">
+                                <i class="fa fa-comments"></i>
+                            </span>
+                            <div class="content">
+                                <h4>24/7 Support</h4>
+                                <p>Electroid Team is available to its valuable customers anytime anywhere for its delivery or maintainance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Why chose us Section  -->
+    <!-- Start Contact Section -->
+    <section id="contact">
+        <div class="overlay">
+            <div class="container">
+                <h1 class="section-title wow fadeIn" data-wow-delay=".2s"><span>Contact</span> Us</h1>
+                <div class="row">
+                    <div class="contact-form">
+                        <form role="form" method="post">
+                            <div class="col-sm-6 col-md-6 wow fadeInLeft" data-wow-delay="0.2s">
+                                <div class="controls">
+                                    <input class="contact_input" type="text" name="name" placeholder="Name">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="controls">
+                                    <input class="contact_input" type="text" name="Email" placeholder="Email">
+                                    <i class="fa fa-envelope-o"></i>
+                                </div>
+                                <div class="controls">
+                                    <input class="contact_input" type="text" name="Phone" placeholder="Phone">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-6 wow fadeInRight" data-wow-delay="0.2s">
+                                <textarea name="massage" rows="7" class="form-control" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-sm-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                                <button type="submit" id="submit" class="btn btn-common">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+    <!-- Start Connected Section -->
+    <section id="connected">
+        <div class="container">
+            <div class="row">
+                <h2 class="section-title wow fadeInUp" data-wow-delay=".2s">Stay Connected</h2>
+                <h3 class="discription wow fadeIn" data-wow-delay=".2s">For further information, contact us on anyone of these.</h3>
+                <hr>
+                <div class="connected-wrapper text-center">
+                    <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="contact-item">
+                            <a href="#"><i class="fa fa-phone"></i></a>
+                            <h5>Order Now</h5>
+                            <h4>0334 - 8043343</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="contact-item">
+                            <a href="#"><i class="fa fa-user"></i></a>
+                            <h5>Support Team</h5>
+                            <h4>electroid.smarthomes@gmail.com</h4>
+                        </div>
+                    </div>
+                    @*<div class="col-sm-6 col-md-3 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="contact-item">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <h5>Twitter</h5>
+                                <h4>electroid</h4>
+                            </div>
+                        </div>*@
+                    <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="contact-item">
+                            <a href="https://web.facebook.com/electroid5/"><i class="fa fa-facebook"></i></a>
+                            <h5>Facebook</h5>
+                            <h4>/electroid5</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Connected Section -->
+    <!-- Footer Section Start -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright text-center">
+                <p>Designed and Developed by <a href="http://neontechs.com"><strong>NeonTech</strong></a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Scroll Top -->
+    <div class="scroll-top" data-spy="affix" data-offset-top="300">
+        <a href="#header"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <!-- Scroll End -->
+    <!-- Include jquery.min.js plugin -->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="~/Scripts/js3/jquery-min.js"></script>
+    <!-- Include Bootstrap plugin -->
+    <script src="~/Scripts/js3/bootstrap.min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+    <!-- One page Nav plugin -->
+    <script src="~/Scripts/js3/jquery.nav.js"></script>
+    <!-- Include Bootstrap plugin -->
+    <script src="~/Scripts/js3/owl.carousel.js"></script>
+    <!-- Include wow plugin -->
+    <script src="~/Scripts/js3/wow.js"></script>
+    <!-- Include mixitup plugin -->
+    <script src="~/Scripts/js3/jquery.mixitup.js"></script>
+    <!-- ScrollTop -->
+    <script src="~/Scripts/js3/lightbox.min.js"></script>
+    <!-- Lightbox -->
+    <script src="~/Scripts/js3/scroll-top.js"></script>
+    <!-- Smooth Scroll -->
+    <script src="~/Scripts/js3/smooth-scroll.js"></script>
+    <!-- preset js -->
+    <script src="~/Scripts/js3/style.changer.js"></script>
+    <!-- Modernizr js -->
+    <script src="~/Scripts/js3/modernizr-2.8.0.main.js"></script>
+    <!-- Main js -->
+    <script src="~/Scripts/js3/main.js"></script>
+
+    @*<script src="~/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>*@
+    <script src="~/assets/js/jquery.backstretch.min.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+
+</body>
+</html>

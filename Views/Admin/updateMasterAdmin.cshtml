@@ -158,15 +158,15 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Name:</label>
+                                <label class="control-label">Name:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="text" style=" width:280px" name="Name" value="@Model.Name" required>
+                                    <input type="text" style=" width:280px" name="Name" maxlength="100" value="@Model.Name" required>
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label">Password:</label>
+                                <label class="control-label">Password:<span style="color:red;">*</span></label>
                                 <div class="controls">
-                                    <input type="password" style=" width:280px" name="Password" value="@Model.Password" required>
+                                    <input type="password" style=" width:280px" name="Password" maxlength="50" value="@Model.Password" required>
                                 </div>
                             </div>
 

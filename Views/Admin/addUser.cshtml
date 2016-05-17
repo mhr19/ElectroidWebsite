@@ -61,11 +61,7 @@
                     <div class="box span12">
                         <div class="box-header" data-original-title>
                             <h2><i class="halflings-icon edit"></i><span class="break"></span>Add User Details</h2>
-                            @*<div class="box-icon">
-                                <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
-                                <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
-                                <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
-                            </div>*@
+                         
                         </div>
                         <div class="box-content">
                             <form class="form-horizontal" action="~/Admin/saveUser" method="post">
@@ -84,15 +80,15 @@
                                             </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label">Name:</label>
+                                        <label class="control-label">Name:<span style="color:red;">*</span></label>
                                         <div class="controls">
-                                            <input type="text" style=" width:280px" name="Name" required>
+                                            <input type="text" style=" width:280px" maxlength="50" name="Name" required>
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label">Password:</label>
+                                        <label class="control-label">Password:<span style="color:red;">*</span></label>
                                         <div class="controls">
-                                            <input type="password" style=" width:280px" name="Password" required>
+                                            <input type="password" style=" width:280px" name="Password" maxlength="50" required>
                                         </div>
                                     </div>
 
