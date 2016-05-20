@@ -37,7 +37,59 @@
     <!-- end: Favicon -->
 
 
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+    </script>
+    
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                url: '@Url.Action("devicesAnalysisGraph", "Admin")',
+                data: '{}',
+                success: function (chartsdata) {
+                    
+                        
+                    
+                    // Callback that creates and populates a data table,
+                    // instantiates the pie chart, passes in the data and
+                    // draws it.
+
+                    var data = new google.visualization.DataTable();
+
+                    data.addColumn('string', 'applianceName');
+                    data.addColumn('number', 'deviceBill');
+
+                    for (var i = 0; i < chartsdata.length; i++) {
+                   
+                        data.addRow([chartsdata[i].applianceName, chartsdata[i].deviceBill]);
+                    }
+                    
+
+                    // Instantiate and draw our chart, passing in some options
+                    var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+
+                    chart.draw(data,
+                      {
+                          title: "Rooms Analysis that shows the units consumed by each room",
+                          position: "top",
+                          fontsize: "14px",
+                          chartArea: { width: '70%' },
+                          is3D: true,
+                      });
+                },
+                error: function () {
+                    alert("Error loading data! Please try again.");
+                }
+            });
+        })
+
+    </script>
 
 </head>
 <body>
@@ -143,10 +195,12 @@
 							<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
 						</div>*@
 					</div>
-					<div class="box-content">
+           <div class="box-content" id="chartdiv" style="width: 900px; height: 500px;">
+           </div>
+					@*<div class="box-content">
 				
                         <img src="~/Admin/makeGraph" />
-					</div>
+					</div>*@
 
 				</div><!--/row-->
 

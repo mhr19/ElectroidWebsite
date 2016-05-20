@@ -79,11 +79,46 @@
                                         </select>
                                             </div>
                                     </div>
+
+                                    
+
                                     <div class="control-group">
                                         <label class="control-label">Name:<span style="color:red;">*</span></label>
                                         <div class="controls">
-                                            <input type="text" style=" width:280px" maxlength="50" name="Name" required>
+                                            <input type="text" id="Name" style=" width:280px" maxlength="50" name="Name" required>
                                         </div>
+                                        
+                                        <div id="result" style="color:red;padding-left:180px"></div>
+                                            
+                                        @Scripts.Render("~/bundles/jquery")
+                                        <script>
+
+                                            $(document).ready(function () {
+
+                                                $('#checking').hide();
+
+                                                $('#Name').change(function () {
+
+                                                    var userName = $('#Name').val();
+
+                                                    //alert('User Name ='+ userName);
+                                                    $('#checking').show();
+                                                    $.getJSON("/Admin/CheckUserEmail?UserName=" + userName, function (data) {
+                                                        $('#checking').hide();
+                                                        if (data) {
+                                                            $('#result').text("User already exists in database");
+                                                            $('#Name').val(null)
+
+                                                        }
+                                                        else {
+                                                            $('#result').text("");
+                                                        }
+                                                    });
+
+                                                });
+
+                                            });
+                                        </script>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label">Password:<span style="color:red;">*</span></label>

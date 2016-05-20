@@ -36,7 +36,66 @@
     <link rel="shortcut icon" href="img/favicon.ico">
     <!-- end: Favicon -->
 
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['corechart', 'bar'] });
+        //google.charts.load("current", { packages: ['corechart'] });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json',
+                url: '@Url.Action("columnChart", "UserPanel", new {id=@obj.HouseId })',
+                data: '{}',
+                success: function (chartsdata) {
+
+                    // Callback that creates and populates a data table,
+                    // instantiates the pie chart, passes in the data and
+                    // draws it.
+
+                    var data = new google.visualization.DataTable();
+
+                    data.addColumn('string', 'applianceName');
+                    data.addColumn('number', 'deviceBill');
+
+                    for (var i = 0; i < chartsdata.length; i++) {
+                        data.addRow([chartsdata[i].applianceName, chartsdata[i].deviceBill]);
+                    }
+
+                    // Instantiate and draw our chart, passing in some options
+                    var chart = new google.visualization.ColumnChart(document.getElementById('chartdiv'));
+
+                    chart.draw(data,
+                      {
+                          
+                              title: 'Energy Consumption Analysis of Appliances',
+                              
+                              hAxis: {
+                                  title: 'Appliance Name',
+                                 
+                                  },
+                              
+                              vAxis: {
+                                  title: 'Total units consumed by each appliance'
+                              }
+                          
+                         
+                          
+                         
+                      });
+                },
+                error: function () {
+                    alert("Error loading data! Please try again.");
+                }
+            });
+        })
+
+    </script>
 
 
 </head>
@@ -92,8 +151,8 @@
                         <li>
                             <a class="dropmenu" href="#"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Analysis</span><span class="label label-important"> 2 </span></a>
                             <ul>
-                                <li><a class="submenu" href="~/UserPanel/roomGraph"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Room Consumption</span></a></li>
-                                <li><a class="submenu" href="~/UserPanel/devicesGraph"><i class="icon-file-alt"></i><span class="hidden-tablet"> Devices consumption</span></a></li>
+                                <li><a class="submenu" href="~/UserPanel/roomGraph"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Rooms Consumption</span></a></li>
+                                <li><a class="submenu" href="~/UserPanel/devicesGraph"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Devices consumption</span></a></li>
                                 @*<li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>*@
                             </ul>
                         </li>
@@ -133,10 +192,12 @@
                             <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
                         </div>*@
                     </div>
-                    <div class="box-content">
+                    <div class="box-content" id="chartdiv" style="width: 900px; height: 500px;">
+                    </div>
+                    @*<div class="box-content">
 
                         <img src="~/UserPanel/devicesAnalysis?id=@obj.HouseId" />
-                    </div>
+                    </div>*@
                 </div>
 
 
