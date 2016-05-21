@@ -159,6 +159,8 @@
                             {
                                 foreach (var a in Model)
                                 {
+                                    if(@a.Type=="MasterAdmin")
+                                    { 
                                     <tr>
                                         <td hidden>@a.Id</td>
                                         <td class="center">@a.Name</td>
@@ -173,13 +175,35 @@
                                             <a class="btn btn-info" href="@Url.Action("updateUser", "Admin", new {Id=@a.Id })">
                                                 <i class="halflings-icon white edit"></i>
                                             </a>
-                                            <a class="btn btn-danger" onclick="return confirm('Do you really want to delete it?')" href="@Url.Action("deleteUser", "Admin", new {Id=@a.Id })">
+                                            @*<a class="btn btn-danger" onclick="return confirm('Do you really want to delete it?')" href="@Url.Action("deleteUser", "Admin", new {Id=@a.Id })">
                                                 <i class="halflings-icon white trash"></i>
-                                            </a>
+                                            </a>*@
                                         </td>
                                     </tr>
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td hidden>@a.Id</td>
+                                            <td class="center">@a.Name</td>
+                                            <td class="center">@a.HouseId</td>
+                                            <td class="center">@a.Password</td>
+                                            <td class="center">@a.Status</td>
+                                            <td class="center">@a.Type</td>
+                                            <td class="center">
+                                                <a class="btn btn-success" href="@Url.Action("viewHouse", "Admin", new {Id=@a.HouseId })">
+                                                    <i class="halflings-icon white zoom-in"></i>
+                                                </a>
+                                                <a class="btn btn-info" href="@Url.Action("updateUser", "Admin", new {Id=@a.Id })">
+                                                    <i class="halflings-icon white edit"></i>
+                                                </a>
+                                                <a class="btn btn-danger" onclick="return confirm('Do you really want to delete it?')" href="@Url.Action("deleteUser", "Admin", new {Id=@a.Id })">
+                                                    <i class="halflings-icon white trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
                                 }
-
                             }
                         </tbody>
                     </table>
