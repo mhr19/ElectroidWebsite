@@ -37,9 +37,61 @@
     <!-- end: Favicon -->
 
 
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   
+    <script src="~/Scripts/js4/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/js4/jquery-migrate-1.0.0.min.js"></script>
 
-    @*<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="~/Scripts/js4/jquery-ui-1.10.0.custom.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.ui.touch-punch.js"></script>
+
+    <script src="~/Scripts/js4/modernizr.js"></script>
+
+    <script src="~/Scripts/js4/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.cookie.js"></script>
+
+    <script src='~/Scripts/js4/fullcalendar.min.js'></script>
+
+    <script src='~/Scripts/js4/jquery.dataTables.min.js'></script>
+    <script src="~/Scripts/js4/excanvas.js"></script>
+    <script src="~/Scripts/js4/jquery.flot.js"></script>
+    <script src="~/Scripts/js4/jquery.flot.pie.js"></script>
+    <script src="~/Scripts/js4/jquery.flot.stack.js"></script>
+    <script src="~/Scripts/js4/jquery.flot.resize.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.chosen.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.uniform.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.cleditor.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.noty.js"></script>
+
+    <script src="~/Scripts/js4/jquery.elfinder.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.raty.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.iphone.toggle.js"></script>
+
+    <script src="~/Scripts/js4/jquery.uploadify-3.1.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.gritter.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.imagesloaded.js"></script>
+
+    <script src="~/Scripts/js4/jquery.masonry.min.js"></script>
+
+    <script src="~/Scripts/js4/jquery.knob.modified.js"></script>
+
+    <script src="~/Scripts/js4/jquery.sparkline.min.js"></script>
+
+    <script src="~/Scripts/js4/counter.js"></script>
+
+    <script src="~/Scripts/js4/retina.js"></script>
+    <script src="~/Scripts/js4/custom.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load('current', { packages: ['corechart', 'bar'] });
@@ -47,56 +99,61 @@
     </script>
     <script type="text/javascript">
         $(function () {
-            $.ajax({
-                type: 'POST',
-                dataType: 'json',
-                contentType: 'application/json',
-                url: '@Url.Action("houseAnalysisGraph", "Admin")',
-                data: '{}',
-                success: function (chartsdata) {
+            google.charts.setOnLoadCallback(chartss);
+            function chartss() {
+                
+               
+                 $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    url: '@Url.Action("houseAnalysisGraph", "Admin")',
+                    data: '{}',
+                    success: function (chartsdata) {
+                        
+                        // Callback that creates and populates a data table,
+                        // instantiates the pie chart, passes in the data and
+                        // draws it.
 
-                    // Callback that creates and populates a data table,
-                    // instantiates the pie chart, passes in the data and
-                    // draws it.
+                        var data = new google.visualization.DataTable();
 
-                    var data = new google.visualization.DataTable();
+                        data.addColumn('string', 'houseName');
+                        data.addColumn('number', 'units1');
 
-                    data.addColumn('string', 'houseName');
-                    data.addColumn('number', 'units');
+                        for (var i = 0; i < chartsdata.length; i++) {
+                            data.addRow([chartsdata[i].houseName, chartsdata[i].units]);
+                        }
 
-                    for (var i = 0; i < chartsdata.length; i++) {
-                        data.addRow([chartsdata[i].houseName, chartsdata[i].units]);
+                        // Instantiate and draw our chart, passing in some options
+                        var chart = new google.visualization.ColumnChart(document.getElementById('chartdiv'));
+                        
+                        chart.draw(data,
+                          {
+
+                              title: 'Energy Consumption Analysis of Appliances',
+
+                              hAxis: {
+                                  title: 'Appliance Name',
+
+                              },
+
+                              vAxis: {
+                                  title: 'Total units consumed by each appliance'
+                              }
+
+
+
+
+                          });
+                    },
+                    error: function () {
+                        alert("Error loading data! Please try again.");
                     }
-
-                    // Instantiate and draw our chart, passing in some options
-                    var chart = new google.visualization.ColumnChart(document.getElementById('chartdiv'));
-
-                    chart.draw(data,
-                      {
-
-                          title: 'Energy Consumption Analysis of Appliances',
-
-                          hAxis: {
-                              title: 'Appliance Name',
-
-                          },
-
-                          vAxis: {
-                              title: 'Total units consumed by each appliance'
-                          }
-
-
-
-
-                      });
-                },
-                error: function () {
-                    alert("Error loading data! Please try again.");
-                }
-            });
+                });
+            }
         })
 
-    </script>*@
+    </script>
 
 
 
@@ -129,12 +186,12 @@
                         <a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
                     </div>*@
             </div>
-            @*<div class="box-content" id="chartdiv" style="width: 900px; height: 500px;">
-            </div>*@
-            <div class="box-content">
+            <div class="box-content" id="chartdiv" style="width: 900px; height: 500px;">
+            </div>
+            @*<div class="box-content">
 
                 <img src="~/Admin/houseGraph" />
-            </div>
+            </div>*@
 
         </div><!--/row-->
         @*<footer>
@@ -146,58 +203,7 @@
 
         <!-- start: JavaScript-->
 
-        <script src="~/Scripts/js4/jquery-1.9.1.min.js"></script>
-        <script src="~/Scripts/js4/jquery-migrate-1.0.0.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery-ui-1.10.0.custom.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.ui.touch-punch.js"></script>
-
-        <script src="~/Scripts/js4/modernizr.js"></script>
-
-        <script src="~/Scripts/js4/bootstrap.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.cookie.js"></script>
-
-        <script src='~/Scripts/js4/fullcalendar.min.js'></script>
-
-        <script src='~/Scripts/js4/jquery.dataTables.min.js'></script>
-        <script src="~/Scripts/js4/excanvas.js"></script>
-        <script src="~/Scripts/js4/jquery.flot.js"></script>
-        <script src="~/Scripts/js4/jquery.flot.pie.js"></script>
-        <script src="~/Scripts/js4/jquery.flot.stack.js"></script>
-        <script src="~/Scripts/js4/jquery.flot.resize.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.chosen.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.uniform.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.cleditor.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.noty.js"></script>
-
-        <script src="~/Scripts/js4/jquery.elfinder.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.raty.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.iphone.toggle.js"></script>
-
-        <script src="~/Scripts/js4/jquery.uploadify-3.1.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.gritter.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.imagesloaded.js"></script>
-
-        <script src="~/Scripts/js4/jquery.masonry.min.js"></script>
-
-        <script src="~/Scripts/js4/jquery.knob.modified.js"></script>
-
-        <script src="~/Scripts/js4/jquery.sparkline.min.js"></script>
-
-        <script src="~/Scripts/js4/counter.js"></script>
-
-        <script src="~/Scripts/js4/retina.js"></script>
-        <script src="~/Scripts/js4/custom.js"></script>
+       
         <!-- end: JavaScript-->
 
 </body>
