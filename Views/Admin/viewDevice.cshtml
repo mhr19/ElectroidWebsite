@@ -94,13 +94,13 @@
         <div class="control-group">
             <label class="control-label">Arduino Id:</label>
             <div class="controls">
-                <input type="text" style=" width:280px" value="@ViewBag.searchedDevice.DeviceArduinoId" name="Name" readonly>
+                <input type="text" style=" width:280px" value="@ViewBag.searchedDevice.ArduinoId" name="Name" readonly>
             </div>
         </div>
         <div class="control-group">
             <label class="control-label">Voltage:</label>
             <div class="controls">
-                <input type="text" style=" width:280px" value="@ViewBag.searchedDevice.Voltage" name="Name" readonly>
+                <input type="text" style=" width:280px" value="@ViewBag.searchedDevice.Watt" name="Name" readonly>
             </div>
         </div>
         <div class="control-group">
@@ -121,9 +121,9 @@
                         <thead>
                             <tr>
                                 <th hidden>Id</th>
-                                <th>Billing Month</th>
+                                <th>Bill Id</th>
                                 <th>Units Consumed</th>
-                                <th>Taxation Detail Id</th>
+                                <th>Amount</th>
                                 
 
                             </tr>
@@ -137,9 +137,9 @@
                                     <tr>
 
                                         <td hidden>@a.Id</td>
-                                        <td class="center">@a.BillingMonth</td>
+                                        <td class="center">@a.BillId</td>
                                         <td class="center">@a.UnitsConsumed</td>
-                                        <td class="center">@a.TaxationDetailId</td>
+                                        <td class="center">@a.Amount</td>
                                        
 
                                         @*<td class="center">

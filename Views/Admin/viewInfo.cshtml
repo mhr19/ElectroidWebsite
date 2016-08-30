@@ -147,6 +147,7 @@
                                         <th hidden>Id</th>
                                         <th style="width:450px;">Address</th>
                                         <th>Phone Number</th>
+                                        <th>Type</th>
                                         <th>Actions</th>
                                         
                                     </tr>
@@ -160,6 +161,7 @@
                                         <td hidden>@a.Id</td>
                                         <td class="center">@a.Address</td>
                                         <td class="center">@a.PhoneNumber</td>
+                                        <td class="center">@a.BillType</td>
                                        
                                         <td class="center">
                                             <a class="btn btn-success" href="@Url.Action("viewHouse", "Admin", new {Id=@a.Id })">

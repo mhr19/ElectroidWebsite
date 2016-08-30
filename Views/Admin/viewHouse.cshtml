@@ -79,9 +79,39 @@
 
         </div>
         <div class="control-group">
+            <label class="control-label">Age:</label>
+            <div class="controls">
+                <input type="text" style=" width:280px" value="@ViewBag.searchedUser.Age" name="Name" readonly>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Gender:</label>
+            <div class="controls">
+                <input type="text" style=" width:280px" value="@ViewBag.searchedUser.Gender" name="Name" readonly>
+            </div>
+        </div>
+        <div class="control-group">
             <label class="control-label">Address:</label>
             <div class="controls">
                 <input type="text" style=" width:280px" value="@ViewBag.searchedHouse.Address" name="Name" readonly>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Bill Type:</label>
+            <div class="controls">
+                <input type="text" style=" width:280px" value="@ViewBag.searchedHouse.BillType" name="BillType" readonly>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">No. of Rooms:</label>
+            <div class="controls">
+                <input type="text" style=" width:280px" value="@ViewBag.searchedHouse.HouseSize" name="HouseSize" readonly>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Arduino Id:</label>
+            <div class="controls">
+                <input type="text" style=" width:280px" value="@ViewBag.searchedHouse.ArduinoId" name="ArduinoId" readonly>
             </div>
         </div>
         <div class="control-group">
@@ -117,7 +147,8 @@
                             <tr>
                                 <th hidden>Id</th>
                                 <th>Room Name</th>
-                                <th>Arduino UNO Id</th>
+                                <th>Arduino Id</th>
+                                <th>Ip Address</th>
                                 <th>Actions</th>
                                 
                             </tr>
@@ -131,8 +162,8 @@
                                  
                                 <td hidden>@a.Id</td>
                                 <td class="center">@a.RoomName</td>
-                                <td class="center">@a.ArduinoUnoId</td>
-                               
+                                <td class="center">@a.ArduinoId</td>
+                                <td class="center">@a.IPAddress</td>
                                 <td class="center">
                                     <a class="btn btn-success" href="@Url.Action("viewRoom", "Admin", new {Id=@a.Id })">
                                         <i class="halflings-icon white zoom-in"></i>

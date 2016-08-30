@@ -1,14 +1,10 @@
-﻿@using Electroid.Models;
+﻿
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var room = ViewBag.searchedRoom;
-    if(room==null)
-    {
-        ViewBag.searchedRoom = "no data found";
-    }
-
+   
+    
 }
-
+@using Electroid.Models;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,9 +87,16 @@
         </div>
       
         <div class="control-group">
-            <label class="control-label">Arduino UNO Id:</label>
+            <label class="control-label">Arduinob Id:</label>
             <div class="controls">
-                <input type="text" style=" width:280px" value="@ViewBag.searchedRoom.ArduinoUnoId" name="Name" readonly>
+                <input type="text" style=" width:280px" value="@ViewBag.searchedRoom.ArduinoId" name="Name" readonly>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">IP Address:</label>
+            <div class="controls">
+                <input type="text" style=" width:280px" value="@ViewBag.searchedRoom.IPAddress" name="Name" readonly>
             </div>
         </div>
 
@@ -113,9 +116,10 @@
                             <tr>
                                <th hidden>Id</th>
                                 <th>Device Name</th>
-                                <th>Device Arduino Id</th>
+                                <th>Arduino Id</th>
                                 <th>Device Status</th>
-                                <th>Voltage</th>
+                                <th>Watts</th>
+                               
                                 <th>Actions</th>
 
                             </tr>
@@ -130,9 +134,9 @@
 
                                         <td hidden>@a.Id</td>
                                         <td class="center">@a.Name</td>
-                                        <td class="center">@a.DeviceArduinoId</td>
+                                        <td class="center">@a.ArduinoId</td>
                                         <td class="center">@a.Status</td>
-                                        <td class="center">@a.Voltage</td>
+                                        <td class="center">@a.Watt</td>
 
                                         <td class="center">
                                             <a class="btn btn-success" href="@Url.Action("viewDevice", "Admin", new {Id=@a.Id })">

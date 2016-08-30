@@ -65,10 +65,10 @@
                         <thead>
                             <tr>
                                 <th hidden>Id</th>
-                                <th>Billing Month</th>
-                                <th>Taxation</th>
-                                <th>Slab1 Rate</th>
-                                <th>Other Amount</th>
+                                <th>Name</th>
+                                <th>Percentage %</th>
+                                <th>BillType Id</th>
+                                
 
                                 <th>Actions</th>
 
@@ -81,15 +81,15 @@
                                 {
                                     <tr>
                                         <td hidden>@a.Id</td>
-                                        <td class="center">@a.BillingMonth</td>
-                                        <td class="center">@a.Taxation</td>
-                                        <td class="center">@a.Slab1Rate</td>
-                                        <td class="center">@a.OtherAmount</td>
+                                        <td class="center">@a.Name</td>
+                                        <td class="center">@a.Percentage</td>
+                                        <td class="center">@a.BillTypeId</td>
+                                      
                                         
                                         <td class="center">
-                                            <a class="btn btn-success" href="@Url.Action("viewTaxationDetail", "Admin", new {Id=@a.Id })">
+                                            @*<a class="btn btn-success" href="@Url.Action("viewTaxationDetail", "Admin", new {Id=@a.Id })">
                                                 <i class="halflings-icon white zoom-in"></i>
-                                            </a>
+                                            </a>*@
                                             <a class="btn btn-info" href="@Url.Action("updateTaxationDetail", "Admin", new {Id=@a.Id })">
                                                 <i class="halflings-icon white edit"></i>
                                             </a>
