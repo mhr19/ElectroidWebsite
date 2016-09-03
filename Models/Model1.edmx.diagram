@@ -4,23 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7bc1bae998f14e0bb525bcbd85e901ab" Name="Diagram1" ZoomLevel="69">
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Appliance" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Bill" Width="1.5" PointX="7" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.BillType" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Device" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.DeviceBill" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.DeviceStatu" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.House" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.OtherTax" Width="1.5" PointX="10.875" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Room" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.SlabDetail" Width="1.5" PointX="4.125" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.TaxationDetail" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.User" Width="1.5" PointX="1" PointY="10.25" IsExpanded="true" />
+      <Diagram DiagramId="fef618674730417aaf2a69f78d8df0cd" Name="Diagram1">
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Appliance" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Bill" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.BillType" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Device" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.DeviceBill" Width="1.5" PointX="10.5" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.DeviceStatu" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.House" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.OtherTax" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.Room" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.SlabDetail" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.TaxationDetail" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbfdfa03948be440caa657a584014ddb0aModel.User" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
         <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_Device_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_Bill_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_DeviceBill_ToTable_1" ManuallyRouted="false" />
         <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_Table_ToTable" ManuallyRouted="false" />
+        <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_House_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_SlabDetail_ToTable" ManuallyRouted="false" />
         <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_Table_ToTable1" ManuallyRouted="false" />
         <AssociationConnector Association="dbfdfa03948be440caa657a584014ddb0aModel.FK_TaxationDetail_ToTable" ManuallyRouted="false" />
