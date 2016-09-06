@@ -71,12 +71,12 @@
                                     <label class="control-label" for="selectError">Bill Type:</label>
                                     <div class="controls">
                                         <select class="form-control" name="BillType" id="selectError" data-rel="chosen">
-                                            @*@foreach (var i in Model)
+                                            @foreach (var i in Model)
                                             {
-                                                <option value="@i.Id">@i.Id</option>
-                                            }*@
-                                            <option value="Residential">Residential</option>
-                                            <option value="Commercial">Commercial</option>
+                                                <option value="@i">@i</option>
+                                            }
+                                            @*<option value="Residential">Residential</option>
+                                            <option value="Commercial">Commercial</option>*@
 
                                         </select>
                                     </div>
